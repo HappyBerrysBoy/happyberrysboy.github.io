@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html>
+<head
+  hexo-theme="Material X"
+  version="1.4"
+  docs="https://xaoxuu.com/wiki/material-x/"
+>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>(3탄, 마지막!!)라즈베리파이로 스트라티스 POS(Stratis Proof of Staking) 하기 | Happy Steem Blog</title>
+   
+  <meta name="description" content="https://www.steemcoinpan.com/@happyberrysboy" />
+   
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1"
+  />
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css"
+  />
+      
+<link rel="stylesheet" href="/style.css">
+ 
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById("loading-bar").style.width = num + "%";
+    }
+  </script>
+
+   
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=UA-159316060-1"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "UA-159316060-1");
+  </script>
+  <script
+    data-ad-client="ca-pub-5599752868924454"
+    async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+  ></script>
+</head>
+
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>Happyberrysboy's Blog</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="검색" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/"
+            
+            
+            id="home">
+            <i class='fas fa-rss fa-fw'></i>&nbsp;홈
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="https://github.com/HappyBerrysBoy?tab=repositories"
+            
+            
+            id="https:github.comHappyBerrysBoy?tab=repositories">
+            <i class='fas fa-code-branch fa-fw'></i>&nbsp;프로젝트
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="https://www.steemcoinpan.com/@happyberrysboy/followers"
+            
+              rel="nofollow"
+            
+            
+            id="https:www.steemcoinpan.com@happyberrysboyfollowers">
+            <i class='fas fa-link fa-fw'></i>&nbsp;친구들
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/about/about.html"
+            
+              rel="nofollow"
+            
+            
+            id="aboutabout.html">
+            <i class='fas fa-info-circle fa-fw'></i>&nbsp;나는..
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure nav-blur">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" target="_self" href='/' >
+        
+          
+            <i class='fas fa-home'></i>
+          
+          
+            Happy Blog
+          
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                    target="_self"
+                  
+                  id="home">
+									<i class='fas fa-hourglass-half fa-fw'></i>&nbsp;Home
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/categories/"
+                  
+                    rel="nofollow"
+                  
+                  
+                    target="_self"
+                  
+                  id="categories">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;Categories
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/tags/"
+                  
+                    rel="nofollow"
+                  
+                  
+                    target="_self"
+                  
+                  id="tags">
+									<i class='fas fa-hashtag fa-fw'></i>&nbsp;Tags
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/archives/"
+                  
+                    rel="nofollow"
+                  
+                  
+                    target="_self"
+                  
+                  id="archives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;Archives
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <input type="text" class="input u-search-input" placeholder="搜索" />
+          <i class="icon fas fa-search fa-fw"></i>
+        </form>
+      </div>
+
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;Home
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/archives/"
+                
+                  rel="nofollow"
+                
+                
+                id="archives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;Archives
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/projects/"
+                
+                
+                id="projects">
+								<i class='fas fa-code-branch fa-fw'></i>&nbsp;Projects
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/friends/"
+                
+                  rel="nofollow"
+                
+                
+                id="friends">
+								<i class='fas fa-link fa-fw'></i>&nbsp;Friends
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="https://github.com/HappyBerrysBoy"
+                
+                  rel="nofollow"
+                
+                
+                id="https:github.comHappyBerrysBoy">
+								<i class='fas fa-book fa-fw'></i>&nbsp;Link
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/about/about.html"
+                
+                  rel="nofollow"
+                
+                
+                id="aboutabout.html">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;About
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/dev/ck7fhdtz203antwf90b7xbad7/kr-newbie-happyberrysboy-3-pos-stratis-proof-of-staking/">
+        (3탄, 마지막!!)라즈베리파이로 스트라티스 POS(Stratis Proof of Staking) 하기
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="/" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p></p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2017-08-04</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/dev/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>dev</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>안녕하세요, 해피베리입니다.. 3탄이 너무 늦었습니다.. ㅠㅠ </p>
+<p>회사 일이 너무 바쁘다 보니.. 시간이 안나 계속 미루다가…<br>마무리를 지어야 겠다 싶어~ 이시간에 작성해 봅니다..!! ㅠㅠ</p>
+<p>먼저 글들 링크는 아래와 같습니다..</p>
+<p>1탄 : <a href="https://steemit.com/kr-newbie/@happyberrysboy/pos-staking" target="_blank" rel="noopener">https://steemit.com/kr-newbie/@happyberrysboy/pos-staking</a><br>2탄 : <a href="https://steemit.com/kr-newbie/@happyberrysboy/2-pos-stratis-proof-of-staking" target="_blank" rel="noopener">https://steemit.com/kr-newbie/@happyberrysboy/2-pos-stratis-proof-of-staking</a></p>
+<p>3탄에서 일단 끝까지 가볼 생각인데… 일단 한번 시작해 봅니다..!!</p>
+<p>먼저 2탄에서는 라즈베리파이 OS를 설치했었지요..!! 라즈베리 파이 설치 후 기본 설정 값들이 있습니다.<br>이부분은 사실 “라즈베리파이 OS”설치로 구글에서 검색만 해도 넘쳐흐르도록 많은 글들이 나오긴 하지만..<br>저도 한번더 간단히 작성해 보도록 하겠습니다.</p>
+<p>먼저 2탄 마지막 스샷에 나왔던.. 화면..!!에서 상단에 보시면 “Terminal” 아이콘이 있습니다. 클릭하셔서 터미널을 하나 엽니다.<br>여기서 부터 Linux 를 좀 오시는 분들은 익숙한 명령어일 테지만, 그렇지 않은 분들은 다소 생소한 감이 많으실겁니다.<br>뭐.. 일단 돈드는것도 아니고~ 명령어 실패한다고 큰 문제 생기는 것도 아니니(OS재설치 다시 함 하면 되지요~) 제가 알려드린대로 순서대로 한번 입력해 보시면 될겁니다…!!</p>
+<p>첫번째!!  라즈비안 기본 설정<br><code>sudo raspi-config</code> 입력<img src="https://steemitimages.com/DQmZ1Eg1YiHfBt9DiBKG2XdfmnAdwMeXxfzMnJjWehqfdfg/%EF%BC%85E1%EF%BC%8584%EF%BC%8589%EF%BC%85E1%EF%BC%8585%EF%BC%85B3%EF%BC%85E1%EF%BC%8584%EF%BC%858F%EF%BC%85E1%EF%BC%8585%EF%BC%85B3%EF%BC%85E1%EF%BC%8584%EF%BC%8585%EF%BC%85E1%EF%BC%8585%EF%BC%85B5%EF%BC%85E1%EF%BC%8586%EF%BC%85AB%EF%BC%85E1%EF%BC%8584%EF%BC%8589%EF%BC%85E1%EF%BC%8585%EF%BC%85A3%EF%BC%85E1%EF%BC%8586%EF%BC%85BA%EF%BC%85202017-08-02%EF%BC%8520%EF%BC%85E1%EF%BC%8584%EF%BC%858B%EF%BC%85E1%EF%BC%8585%EF%BC%85A9%EF%BC%85E1%EF%BC%8584%EF%BC%8592%EF%BC%85E1%EF%BC%8585%EF%BC%85AE%EF%BC%852012.47.42.png" alt="스크린샷 2017-08-02 오후 12.47.42.png"><br>그러면 위와 같은 화면이 나옵니다.<br>여기서 가장먼저 1. “Change User Password”를 선택합니다. 그리고 바로 적용할 Password를 2회 입력합니다.(1회입력 엔터 후 재입력)<img src="https://steemitimages.com/DQmQFaxfD7mtgoDeTmyLoM7FuiiQRAF1divLGP9kMdiaJg9/%EF%BC%85E1%EF%BC%8584%EF%BC%8589%EF%BC%85E1%EF%BC%8585%EF%BC%85B3%EF%BC%85E1%EF%BC%8584%EF%BC%858F%EF%BC%85E1%EF%BC%8585%EF%BC%85B3%EF%BC%85E1%EF%BC%8584%EF%BC%8585%EF%BC%85E1%EF%BC%8585%EF%BC%85B5%EF%BC%85E1%EF%BC%8586%EF%BC%85AB%EF%BC%85E1%EF%BC%8584%EF%BC%8589%EF%BC%85E1%EF%BC%8585%EF%BC%85A3%EF%BC%85E1%EF%BC%8586%EF%BC%85BA%EF%BC%85202017-08-02%EF%BC%8520%EF%BC%85E1%EF%BC%8584%EF%BC%858B%EF%BC%85E1%EF%BC%8585%EF%BC%85A9%EF%BC%85E1%EF%BC%8584%EF%BC%8592%EF%BC%85E1%EF%BC%8585%EF%BC%85AE%EF%BC%852012.48.17.png" alt="스크린샷 2017-08-02 오후 12.48.17.png"><br>이 비밀번호는 라즈베리파이 OS비밀번호입니다.(윈도우 첨에 켜면 입력하는 비번이라 보시면 됩니다.)</p>
+<p>그다음엔  4.”Localisation Options”로 들어갑니다.<br>Time Zone은  Asia =&gt; Seoul 을 선택합니다.(스페이스를 누르면 선택이 됩니다.)<br>Locale은  en_US.ISO-8859, en_US.UTF-8, ko_KR.EUC-KR, ko_KR.UTF-8 을 선택합니다.(스페이스를 누르면 선택이 됩니다.)<br>Default는 en_US.UTF-8를 선택하시면 됩니다.<br>타임존은 라즈베리파이 시간을 한국으로 맞추는 것이고, Locale는 라즈베리파이에서 사용될 문자를 선택하는 겁니다.</p>
+<p>마지막으로  5. “Interfacing Options”을 선택합니다.<br><img src="https://steemitimages.com/DQmRNxy4nmbvQLtmrcfjpQmayPCgwZgvtTiUCcj4FD2BE4r/%EF%BC%85E1%EF%BC%8584%EF%BC%8589%EF%BC%85E1%EF%BC%8585%EF%BC%85B3%EF%BC%85E1%EF%BC%8584%EF%BC%858F%EF%BC%85E1%EF%BC%8585%EF%BC%85B3%EF%BC%85E1%EF%BC%8584%EF%BC%8585%EF%BC%85E1%EF%BC%8585%EF%BC%85B5%EF%BC%85E1%EF%BC%8586%EF%BC%85AB%EF%BC%85E1%EF%BC%8584%EF%BC%8589%EF%BC%85E1%EF%BC%8585%EF%BC%85A3%EF%BC%85E1%EF%BC%8586%EF%BC%85BA%EF%BC%85202017-08-04%EF%BC%8520%EF%BC%85E1%EF%BC%8584%EF%BC%858B%EF%BC%85E1%EF%BC%8585%EF%BC%85A9%EF%BC%85E1%EF%BC%8584%EF%BC%858C%EF%BC%85E1%EF%BC%8585%EF%BC%85A5%EF%BC%85E1%EF%BC%8586%EF%BC%85AB%EF%BC%85202.13.33.png" alt="스크린샷 2017-08-04 오전 2.13.33.png"><br>P2 “SSH”와 P3 “VNC”를 선택 후 “Enable”로 활성화 시킵니다.<br>SSH는 추후 라즈베리파이와 원격으로 터미널을 연결 할 수 있는 옵션이고, VNC는 원격 화면 접속을 할 수 있는 옵션입니다.<br>SSH의 경우 구글에서 “라즈베리파이 SSH”으로 검색하시면 수많은 포스팅들이 존재할것입니다.(요 방식은 개발자나 언어에 익숙하신 분들이 주로 사용하는 방법)<br>VNC는 비 프로그래머 분들에게 익숙한.. 원격 접속 기능 입니다. 요것도 “라즈베리파이 VNC”로 검색해보시면 무수히 많은… ㅠㅠ<br>죄송합니다 제가 이 포스팅에 그부분들은 검색으로 대체하도록 하겠습니다.</p>
+<p>아직 갈 길이.. 멀거든요 ㅠㅠ</p>
+<p>일단.. 이까지 하면 <code>sudo raspi-config</code> 설정은 완료입니다. 저는 바로 다른 작업들을 하긴 했는데.. 대부분의 포스팅을 보면 한번 껏다가 켜라고 하는군요? ㅎㅎ <code>reboot</code>를 입력한번 한번 재부팅 해줍니다.</p>
+<p>두번째!! 설치 툴 업데이트 &amp;&amp; 업그레이드<br>대체로 간단합니다.<br>재부팅이 되고나면 다시 “터미널”을 하나 생성해 주시고 다음과 같이 입력하고 기다리시면 됩니다.<br><code>sudo apt-get update &amp;&amp; sudo apt-get upgrade</code><br>그러면 아래와 같이 알아서 무언가가 설치되고 업데이트 되게 됩니다.</p>
+<p><img src="https://steemitimages.com/DQmU8drfJNArCmCxwTXwqQgrp8KVEcigwZg7fUAK5ogYyBh/%EF%BC%85E1%EF%BC%8584%EF%BC%8589%EF%BC%85E1%EF%BC%8585%EF%BC%85B3%EF%BC%85E1%EF%BC%8584%EF%BC%858F%EF%BC%85E1%EF%BC%8585%EF%BC%85B3%EF%BC%85E1%EF%BC%8584%EF%BC%8585%EF%BC%85E1%EF%BC%8585%EF%BC%85B5%EF%BC%85E1%EF%BC%8586%EF%BC%85AB%EF%BC%85E1%EF%BC%8584%EF%BC%8589%EF%BC%85E1%EF%BC%8585%EF%BC%85A3%EF%BC%85E1%EF%BC%8586%EF%BC%85BA%EF%BC%85202017-08-02%EF%BC%8520%EF%BC%85E1%EF%BC%8584%EF%BC%858B%EF%BC%85E1%EF%BC%8585%EF%BC%85A9%EF%BC%85E1%EF%BC%8584%EF%BC%8592%EF%BC%85E1%EF%BC%8585%EF%BC%85AE%EF%BC%852012.51.06.png" alt="스크린샷 2017-08-02 오후 12.51.06.png"></p>
+<p>세번째!! 방화벽 설치!!<br>우리의 소중한 재산 암호화폐! 스트라티스!! 보안을 당연히 염두에 두셔야 겠지요.. 방화벽을 설치 하여 특정 IP대역 이외에는 접근 할 수 없도록 설정을 합니다.</p>
+<p>먼저 <code>sudo apt-get install ufw -y</code> 를 입력하여 방화벽 툴을 설치합니다.<br>그리고 <code>hostname -I</code> 를 입력하면 현재 라즈베리 파이 IP를 확인합니다.(ex : 172.30.1.20)<br>라즈베리파이마다 IP가 다를 것이므로 본인의 IP를 확인 후 다음과 같이 입력합니다.(예시 처럼 172.30.1.20 인 경우 아래처럼 172.30.1.0 으로 입력하시면 됩니다.)<br><code>sudo ufw enable &amp;&amp; sudo ufw allow from 172.30.1.0/24 to any port 22</code>  – 동일 대역 SSH 접속을 위한 설정<br><code>sudo ufw enable &amp;&amp; sudo ufw allow from 172.30.1.0/24 to any port 5900</code> – 동일 대역 VNC 접속을 위한 설정<br><code>sudo ufw deny 16174</code> – 설명서에 해커들이 이 port로 접근할 수 있다고 해서 막으라고 되어 있어요~</p>
+<p>그리고 <code>sudo ufw status</code> 를 입력하시면 조금 전 설정한 값들이 적용 된 것을 확인 하실 수 있습니다.</p>
+<p>위와 같이 방화벽을 설정하고 나면, 동일 대역 IP(A.B.C.D)가 있다면 A.B.C가 동일한 IP대역에서만 접근이 가능해집니다. 해킹에 조금이라도 더 안전하게 되겠지요. 혹시 이 설정 후에 VNC가 안된다거나 SSH 접속이 안되거나 하는 경우 접속을 시도하는 컴퓨터의 IP대역을 의심해 보시면 됩니다.(또는 port, 필자가 5900을 안열고 vnc안된다고.. os재설치 했던.. ㅠㅠ vnc 기본 port가 5900입니다.)</p>
+<p>네번째!! stratis 소스 빌드<br>이제부터 명령어들은 항상 “home/pi”경로에서 이루어져야 합니다.<br><code>pwd</code>를 입력해보시면 현재 경로가 확인됩니다. <code>cd</code>명령어로 여기저기 다니신게 아니라면 현재는 “home/pi”가 현재 경로일겁니다.<br>여기서 아래와 같이 입력합니다. 빌드를 위해 추가로 설치되어야 할 툴들이라고 보시면 됩니다.<br><code>sudo apt-get install -f build-essential git g++ libtool make unzip wget libboost-all-dev libssl-dev libdb++-dev libdb5.3++-dev libdb5.3-dev libminiupnpc-dev libqrencode-dev -y</code></p>
+<p>매우 길지만.. 뭐 입력하면 알아서 작동합니다.. 혹시 중간중간에 “y/n”같이 묻는경우가 있으면 1초의 지체도 없이 “y”를 입력하시고 엔터키를 사정없이 입력합니다.<br>위 명령어 길이에서 유추가 가능 할 수도 있는데.. 이부분 설치하는데 저는 “40분”이 걸렸습니다. 커피한잔, 게임한판, 기타 다른 볼일들을 보시는걸 추천드립니다.</p>
+<p>그다음으로 stratis 소스를 다운 받는 단계입니다.<br><code>git clone https://github.com/stratisproject/stratisX.git</code><br>입력하시면 해당 경로의 “stratisX” 폴더에 소스를 다운 받습니다.. 금방 받아요~~</p>
+<p>완료 후 <code>cd stratisX</code>를 입력하여 해당 폴더로 들어간 후,  <code>cd src &amp;&amp; make -f makefile.unix</code> 를 입력합니다.<br>그러면 stratis 소스 빌드가 시작됩니다.<br>명령어 짧습니다.. 하지만 저는 1시간 걸렸습니다.. 멀고도 험한 길이네요.. 아까 끊었떤 게임한판 재시작.. 커피한잔더..는 좀… 다른 볼일들을 추가로 보십니다.. ㅋ</p>
+<p>빌드가 완료되면 잔여 데이터들을 제거하기 위해 <code>strip stratisd</code>를 입력합니다. 바로 완료!!</p>
+<p>그리고.. 옵션 설정이긴 한데.. 어느 경로에서든 stratisd 명령어를 입력 할 수 있게 하기 위해 <code>sudo mv stratisd /usr/bin</code>를 입력하십니다.</p>
+<p>다섯번째!! Increase the Swap File Size(저도 무슨 과정인지 자세히는 모르지만.. 하라고 해서 저도 했습니다..)<br><code>sudo nano /etc/dphys-swapfile</code> 입력합니다. 아래와 같이 뜹니다.(노란색 배경화면은.. 제가 잠시 맥으로 ssh 접속해서 추가 작성하는거라 좀.. 색깔이 다르지만.. 내용은 동일합니다.)<br>저는 이미 값을 변경 했지만, “CONF_SWAPSIZE” 값을 보시면 100이던가… 로 처음에 설정되어 있을겁니다. 이 값을 512 or 1024로변경하랍니다. 뭐가 좋은지 몰라도 저는 왠지 큰값이 좋아보여서 1024로 변경했습니다… ㅋ 죄송합니다.. 이해도 못하는게 글써서.. ㅠㅠ</p>
+<p><img src="https://steemitimages.com/DQmcJSUSG5ZB6Vbc9GwijXjM3CSKftXzawSGuPPxw3Xda4F/%EF%BC%85E1%EF%BC%8584%EF%BC%8589%EF%BC%85E1%EF%BC%8585%EF%BC%85B3%EF%BC%85E1%EF%BC%8584%EF%BC%858F%EF%BC%85E1%EF%BC%8585%EF%BC%85B3%EF%BC%85E1%EF%BC%8584%EF%BC%8585%EF%BC%85E1%EF%BC%8585%EF%BC%85B5%EF%BC%85E1%EF%BC%8586%EF%BC%85AB%EF%BC%85E1%EF%BC%8584%EF%BC%8589%EF%BC%85E1%EF%BC%8585%EF%BC%85A3%EF%BC%85E1%EF%BC%8586%EF%BC%85BA%EF%BC%85202017-08-04%EF%BC%8520%EF%BC%85E1%EF%BC%8584%EF%BC%858B%EF%BC%85E1%EF%BC%8585%EF%BC%85A9%EF%BC%85E1%EF%BC%8584%EF%BC%858C%EF%BC%85E1%EF%BC%8585%EF%BC%85A5%EF%BC%85E1%EF%BC%8586%EF%BC%85AB%EF%BC%85202.48.44.png" alt="스크린샷 2017-08-04 오전 2.48.44.png"></p>
+<p>설정 완료 후 <code>sudo service dphys-swapfile restart</code> 를 입력하여 변경된 값을 적용합니다. 이것도 몇분 걸립니다. 화면에 아무런 반응 없이 시간만 몇분 흐르니.. 너무 조바심 안내셔도 될것 같습니다. 완료되면 다시 입력할 수 있는 부분이 뜹니다..</p>
+<p>여섯번째!! stratis-qt(지갑) 설치 및 컴파일</p>
+<p>또!! 설치 및 빌드하는데 필요한 툴들이 있답니다. 이번엔 아까보다 더 깁니다.. 명령어가.. 하지만 아까보다 다행히 시간은 짧습니다. 대략 10분 안짝으로 끝났던거 같네요~!! 아래와 같이 입력합니다.(여러줄로 표시되는거 저거 전부다 한줄인겁니다;;)</p>
+<p><code>sudo apt-get install -f build-essential autoconf automake git g++ libtool make unzip wget qt5-default qt5-qmake qtbase5-dev qtbase5-dev-tools libqt5webkit5 libqt5webkit5-dev libqt5qml5 libqt5quickwidgets5 qml-module-qt-labs-settings qtdeclarative5-dev-tools qttools5-dev-tools libboost-all-dev libssl-dev libdb++-dev libdb5.3++-dev libdb5.3-dev libminiupnpc-dev libqrencode-dev libprotobuf-dev</code></p>
+<p>완료 후 stratis 지갑 컴파일 작업을 합니다. 현재 경로를 확인 후..(<code>pwd</code>) “home/pi”로 맞춰주시고요. 혹시 여기로 오는 방법을 모르신다면.. 터미널 창을 하나더 열면 기본 루트가 여깁니다. “홈/파이” ~ ㅋ<br>여기서 아래와 같이 입력합니다. 명령어 짧습니다. 시간 졸라 깁니다.. 저는 끝나는 시간을 정확히 캐치하진 못했지만..1시간 40분 후에 완료된걸 확인 할 수 있었습니다. ㅠㅠ 게임 다시 ㄱㄱ 생필품 쇼핑 ㄱㄱ</p>
+<p><code>cd stratisX;qmake;make;strip stratis-qt</code></p>
+<p>일곱번째!! 지갑 실행 및 sync 맞추기<br>일단 여섯번째!! 까지 해서 지갑 설치는 완료 되었습니다.(지갑에서 스테이킹을 할수 있습니다.)<br>그러면 아래처럼 입력해서 지갑을 실행합니다.<br><code>./stratis-qt</code> – 현재 경로 “home/pi/stratisX” 기준..(이전명령어 완료 후라면 현재 여기 경로로 되어 있을겁니다.)</p>
+<p>지갑 실행도 어느경로에서 가능 할수 있도록 <code>sudo cp stratis-qt /usr/local/bin</code>를 미리 한번 입력해주시는 것도 좋습니다.</p>
+<p>지갑이 실행되면…. 대망의 stratis wallet이 모습을 드러내게 됩니다..!!<br><img src="https://steemitimages.com/DQmcmfrxiFt9SXfQRCAz3Uz2FpW5XVGXXgVSr1rvPTVdqbd/%EF%BC%85E1%EF%BC%8584%EF%BC%8589%EF%BC%85E1%EF%BC%8585%EF%BC%85B3%EF%BC%85E1%EF%BC%8584%EF%BC%858F%EF%BC%85E1%EF%BC%8585%EF%BC%85B3%EF%BC%85E1%EF%BC%8584%EF%BC%8585%EF%BC%85E1%EF%BC%8585%EF%BC%85B5%EF%BC%85E1%EF%BC%8586%EF%BC%85AB%EF%BC%85E1%EF%BC%8584%EF%BC%8589%EF%BC%85E1%EF%BC%8585%EF%BC%85A3%EF%BC%85E1%EF%BC%8586%EF%BC%85BA%EF%BC%85202017-08-03%EF%BC%8520%EF%BC%85E1%EF%BC%8584%EF%BC%858B%EF%BC%85E1%EF%BC%8585%EF%BC%85A9%EF%BC%85E1%EF%BC%8584%EF%BC%8592%EF%BC%85E1%EF%BC%8585%EF%BC%85AE%EF%BC%85208.58.54.png" alt="스크린샷 2017-08-03 오후 8.58.54.png"></p>
+<p>0스트라.. 첨에 설치하면 당연히 저렇게 되어 있겠지요.. ㅎㅎ 그리고 out of sync로 현재까지의 블록체인 정보와 싱크를 하기 위한 작업을 시작합니다. 그냥 켜놓으면 싱크 작업이 시작됩니다. 이건 시간이..뭐 그냥 넉넉잡아 12시간 잡으시면 될듯합니다.. 체인이 커질수록 더더 오래 걸리겠지요. </p>
+<p>싱크가 되는 동안 왼쪽에 메뉴들을 몇개 눌러 봅니다.<br>Receive는 현재 지갑 주소정보, 받은 내역들이 뜨고요<br>Send는 보낼 수 있는 기능!!<br>Transactions 는 이 지갑에 들락날락거린 스트라들<br>Address book는 주소들 등록하는 화면인가 봅니다? </p>
+<p>나머지 POS 하기는 다른분이 이미 스팀잇에 올린부분을 따라 하시면 될듯합니다.<br>이 링크(<a href="https://steemit.com/kr/@sjc333/5kyv2u-pos)를" target="_blank" rel="noopener">https://steemit.com/kr/@sjc333/5kyv2u-pos)를</a> 따라하면 좋을 듯 하네요~<br>이분은 아마 윈도우 버전? 일텐데.. 일단 지갑생긴게 똑같지요?? 사용법도 동일합니다..!!<br>이 글(<a href="https://steemit.com/coinkorea/@tosintosin/pos-how-to-stratis-mining-pos-kr-en)도" target="_blank" rel="noopener">https://steemit.com/coinkorea/@tosintosin/pos-how-to-stratis-mining-pos-kr-en)도</a> 좋네요~</p>
+<p>여기까지가 라즈베리파이로 스트라티스 POS하기 마무으리!!! 입니다..</p>
+<p>앞으로 또 언제 글을 쓸 수 있을까 싶어, 오늘 무리해서라도 일단 글 작성은 완료 했네요;; 3:12분;;<br>저도 평소 글쓰기를 즐겨하진 않지만.. 몇 안되는 장문의 포스팅 중 하나인데, 조금 아쉬움이 남기는 합니다.</p>
+<p>앞으로 기회 있으면 스팀잇에 좀 더 글을 남겨보도록 할테고요~ 여기까지 읽어주시고.. 실제로 해보신분들!!<br>꼭 성공하시길 바랍니다!! 안되면 댓글남겨 주시면 보충설명 해드리도록 할게요<del>~</del>!!!</p>
+<p>마지막으로 현재까지 제가 POS해서 채굴성공한 내역 공개합니다. 이게 날짜가 들쭉 날쭉하고요.. 참고로 마지막 날짜 이후에.. 제 라즈베리파이를.. 조카가 부셔버려서;; 지금 작성하는 글에 캡쳐된 내용들은 재 설치하면서 캡쳐해준 것들입니다.</p>
+<p>참고해주시고요.. POS 채굴 성공 하였는지 일일이 라즈베리 파이 화면을 켜서 확인하는건 번거로우므로, 여기서 확인하시면 간단하니 참고바랍니다.</p>
+<p><a href="https://chainz.cryptoid.info/strat/address.dws?SV3R9XrRtVhpbB8vsAFpbGwm3tENwnUGe8.htm" target="_blank" rel="noopener">https://chainz.cryptoid.info/strat/address.dws?SV3R9XrRtVhpbB8vsAFpbGwm3tENwnUGe8.htm</a></p>
+<p>뒷부분은 제 지갑 주소이고요.. 뭐 여기로 몇몇 스트라를 전송해주신다던지.. 하시는 분들은 천사인거 같습니다.. ㅋ<br>여기 웹사이트에서 “search address block…” 되어 있는 부분에 본인 지갑 주소를 입력하면 현재 본인 지갑의 상태를 아실 수 있고, 채굴정보도 확인 하실 수 있습니다.</p>
+<p>마지막으로 저의 채굴 정보만 보여드리고.. 이만 저는… 꿈나라로 가도록 하겠습니다..<br>내일 불금인데.. 즐거운 하루 되시고~ 스트라가.. 조금 회복해서 너무기쁩니다.. 스트라가 개당 10만원이 되는 그날까지!!! 화이링!! ㅋ</p>
+
+          
+            <br>
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+          
+        </div>
+        
+          <br>
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-02T13:40:14+09:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>更新于 Mar 2, 2020</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/kr/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>kr</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/kr-dev/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>kr-dev</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/coinkorea/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>coinkorea</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/kr-newbie/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>kr-newbie</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/stratis/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>stratis</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                            <h4>
+                                <a href="/dev/ck7fhdt7200eetwf992dkeqly/kr-newbie-happyberrysboy-pos-staking-10-strat/" rel="prev" title="스트라티스 라즈베리파이 POS(Stratis POS Staking) 10 STRAT 성공..!!(Get 10 STRAT by POS)">
+                                  
+                                      스트라티스 라즈베리파이 POS(Stratis POS Staking) 10 STRAT 성공..!!(Get 10 STRAT by POS)
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/kr/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> kr</a> <a class="tag" href="/tags/kr-dev/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> kr-dev</a> <a class="tag" href="/tags/coinkorea/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> coinkorea</a> <a class="tag" href="/tags/kr-newbie/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> kr-newbie</a> <a class="tag" href="/tags/stratis/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> stratis</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/dev/ck7fhdt7000e7twf9236qfdix/kr-newbie-happyberrysboy-2-pos-stratis-proof-of-staking/" rel="prev" title="(2탄)라즈베리파이로 스트라티스 POS(Stratis Proof of Staking) 하기">
+                                    
+                                        (2탄)라즈베리파이로 스트라티스 POS(Stratis Proof of Staking) 하기
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/kr/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> kr</a> <a class="tag" href="/tags/kr-dev/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> kr-dev</a> <a class="tag" href="/tags/coinkorea/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> coinkorea</a> <a class="tag" href="/tags/kr-newbie/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> kr-newbie</a> <a class="tag" href="/tags/raspberry/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> raspberry</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '(3탄, 마지막!!)라즈베리파이로 스트라티스 POS(Stratis Proof of Staking) 하기',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+        
+          <section class='widget widget-blur blogger'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='https://cdn.steemitimages.com/DQmYoGJM3gmtjZQ8PtW25HPqWHGzMgxu94XCc8nVGoAxntu/WHALE_COLORED_FIN_plat.jpg'/>
+      </div>
+    
+    
+      <div class='text'>
+        
+        
+        
+          <p><span id="jinrishici-sentence">Happy Steem Blog</span></p>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:happyaws191204@gmail.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/HappyBerrysBoy"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+      
+        
+      
+        
+          
+
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+      
+        
+      
+        
+      
+        
+          
+  <section class='widget widget-blur category'>
+    <header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;카테고리</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+      target="_self"
+    
+    href="/blog/categories/"
+    title="blog/categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/baby/" href="/categories/baby/"><div class='name'>baby</div><div class='badge'>(26)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/blockchain/" href="/categories/blockchain/"><div class='name'>blockchain</div><div class='badge'>(27)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/dev/" href="/categories/dev/"><div class='name'>dev</div><div class='badge'>(68)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/food/" href="/categories/food/"><div class='name'>food</div><div class='badge'>(27)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/game/" href="/categories/game/"><div class='name'>game</div><div class='badge'>(56)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/life/" href="/categories/life/"><div class='name'>life</div><div class='badge'>(246)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/picture/" href="/categories/picture/"><div class='name'>picture</div><div class='badge'>(5)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+      
+        
+      
+        
+      
+        
+      
+        
+          
+  <section class='widget widget-blur tagcloud'>
+    <header class='pure'>
+  <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;관심태그</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+      target="_self"
+    
+    href="/blog/tags/"
+    title="blog/tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/tags/aaa/" style="font-size: 19.59px; color: #737373">aaa</a> <a href="/tags/aaa-movie/" style="font-size: 14px; color: #999">aaa-movie</a> <a href="/tags/ait/" style="font-size: 14px; color: #999">ait</a> <a href="/tags/appics/" style="font-size: 14.29px; color: #979797">appics</a> <a href="/tags/baby/" style="font-size: 15.76px; color: #8d8d8d">baby</a> <a href="/tags/beef/" style="font-size: 14px; color: #999">beef</a> <a href="/tags/birthday/" style="font-size: 14.29px; color: #979797">birthday</a> <a href="/tags/bitcoin/" style="font-size: 16.06px; color: #8b8b8b">bitcoin</a> <a href="/tags/blockchain/" style="font-size: 14px; color: #999">blockchain</a> <a href="/tags/bnw/" style="font-size: 14px; color: #999">bnw</a> <a href="/tags/bnw100/" style="font-size: 14px; color: #999">bnw100</a> <a href="/tags/browser/" style="font-size: 14px; color: #999">browser</a> <a href="/tags/bs/" style="font-size: 16.06px; color: #8b8b8b">bs</a> <a href="/tags/busan/" style="font-size: 14px; color: #999">busan</a> <a href="/tags/busy/" style="font-size: 22.24px; color: #616161">busy</a> <a href="/tags/c9/" style="font-size: 14px; color: #999">c9</a> <a href="/tags/cafe/" style="font-size: 14px; color: #999">cafe</a> <a href="/tags/candlechart/" style="font-size: 14px; color: #999">candlechart</a> <a href="/tags/cheese/" style="font-size: 14px; color: #999">cheese</a> <a href="/tags/chicken/" style="font-size: 14px; color: #999">chicken</a> <a href="/tags/child/" style="font-size: 15.18px; color: #919191">child</a> <a href="/tags/children/" style="font-size: 14.59px; color: #959595">children</a> <a href="/tags/christmas/" style="font-size: 14.29px; color: #979797">christmas</a> <a href="/tags/christmastree/" style="font-size: 14px; color: #999">christmastree</a> <a href="/tags/chrome-extension/" style="font-size: 14px; color: #999">chrome-extension</a> <a href="/tags/cleaner/" style="font-size: 14px; color: #999">cleaner</a> <a href="/tags/cleaning/" style="font-size: 14px; color: #999">cleaning</a> <a href="/tags/cloud-mining/" style="font-size: 14px; color: #999">cloud-mining</a> <a href="/tags/cloudmining/" style="font-size: 14.29px; color: #979797">cloudmining</a> <a href="/tags/coco/" style="font-size: 14px; color: #999">coco</a> <a href="/tags/code/" style="font-size: 14px; color: #999">code</a> <a href="/tags/coinkorea/" style="font-size: 19.88px; color: #717171">coinkorea</a> <a href="/tags/coinstory/" style="font-size: 14.29px; color: #979797">coinstory</a> <a href="/tags/cryptocurrency/" style="font-size: 14px; color: #999">cryptocurrency</a> <a href="/tags/curation/" style="font-size: 14px; color: #999">curation</a> <a href="/tags/daily/" style="font-size: 16.06px; color: #8b8b8b">daily</a> <a href="/tags/daughter/" style="font-size: 14px; color: #999">daughter</a> <a href="/tags/dblig/" style="font-size: 14px; color: #999">dblig</a> <a href="/tags/dblog/" style="font-size: 21.06px; color: #696969">dblog</a> <a href="/tags/dcommerce/" style="font-size: 14px; color: #999">dcommerce</a> <a href="/tags/design/" style="font-size: 14px; color: #999">design</a> <a href="/tags/dev/" style="font-size: 14px; color: #999">dev</a> <a href="/tags/development/" style="font-size: 14.88px; color: #939393">development</a> <a href="/tags/diary/" style="font-size: 14.88px; color: #939393">diary</a> <a href="/tags/drugwars/" style="font-size: 14px; color: #999">drugwars</a> <a href="/tags/dw/" style="font-size: 14px; color: #999">dw</a> <a href="/tags/easysteemit/" style="font-size: 14px; color: #999">easysteemit</a> <a href="/tags/eos/" style="font-size: 14.29px; color: #979797">eos</a> <a href="/tags/eosknights/" style="font-size: 14px; color: #999">eosknights</a> <a href="/tags/erc-20/" style="font-size: 14px; color: #999">erc-20</a> <a href="/tags/family/" style="font-size: 14.29px; color: #979797">family</a> <a href="/tags/father/" style="font-size: 14px; color: #999">father</a> <a href="/tags/fight/" style="font-size: 14px; color: #999">fight</a> <a href="/tags/firebase/" style="font-size: 14px; color: #999">firebase</a> <a href="/tags/fish/" style="font-size: 14px; color: #999">fish</a> <a href="/tags/food/" style="font-size: 15.18px; color: #919191">food</a> <a href="/tags/free-snaxaccount/" style="font-size: 14px; color: #999">free-snaxaccount</a> <a href="/tags/freeboard/" style="font-size: 14px; color: #999">freeboard</a> <a href="/tags/gaming/" style="font-size: 14px; color: #999">gaming</a> <a href="/tags/gg/" style="font-size: 14px; color: #999">gg</a> <a href="/tags/gopaxkr/" style="font-size: 14px; color: #999">gopaxkr</a> <a href="/tags/happy-dice/" style="font-size: 14px; color: #999">happy-dice</a> <a href="/tags/happy-pick/" style="font-size: 14.59px; color: #959595">happy-pick</a> <a href="/tags/happyfamily/" style="font-size: 14px; color: #999">happyfamily</a> <a href="/tags/hashflare/" style="font-size: 15.18px; color: #919191">hashflare</a> <a href="/tags/hive-101145/" style="font-size: 16.06px; color: #8b8b8b">hive-101145</a> <a href="/tags/hometown/" style="font-size: 14px; color: #999">hometown</a> <a href="/tags/honeymoon/" style="font-size: 14px; color: #999">honeymoon</a> <a href="/tags/ide/" style="font-size: 14px; color: #999">ide</a> <a href="/tags/image/" style="font-size: 15.76px; color: #8d8d8d">image</a> <a href="/tags/introducemywife/" style="font-size: 14px; color: #999">introducemywife</a> <a href="/tags/iphone/" style="font-size: 14px; color: #999">iphone</a> <a href="/tags/iv/" style="font-size: 15.18px; color: #919191">iv</a> <a href="/tags/j42day/" style="font-size: 14.29px; color: #979797">j42day</a> <a href="/tags/javascript/" style="font-size: 14px; color: #999">javascript</a> <a href="/tags/jinhae/" style="font-size: 14px; color: #999">jinhae</a> <a href="/tags/jjangjjangman/" style="font-size: 17.82px; color: #7f7f7f">jjangjjangman</a> <a href="/tags/jjm/" style="font-size: 22.82px; color: #5d5d5d">jjm</a> <a href="/tags/karaoke/" style="font-size: 14.29px; color: #979797">karaoke</a> <a href="/tags/kimchi/" style="font-size: 14px; color: #999">kimchi</a> <a href="/tags/kingcrap/" style="font-size: 14px; color: #999">kingcrap</a> <a href="/tags/klaytn/" style="font-size: 15.47px; color: #8f8f8f">klaytn</a> <a href="/tags/klaytnknights/" style="font-size: 14px; color: #999">klaytnknights</a> <a href="/tags/korean-song/" style="font-size: 14px; color: #999">korean-song</a> <a href="/tags/koreasoccer/" style="font-size: 14px; color: #999">koreasoccer</a> <a href="/tags/kr/" style="font-size: 23.12px; color: #5b5b5b">kr</a> <a href="/tags/kr-cook/" style="font-size: 14.59px; color: #959595">kr-cook</a> <a href="/tags/kr-daddy/" style="font-size: 17.82px; color: #7f7f7f">kr-daddy</a> <a href="/tags/kr-daily/" style="font-size: 14.29px; color: #979797">kr-daily</a> <a href="/tags/kr-dev/" style="font-size: 20.47px; color: #6d6d6d">kr-dev</a> <a href="/tags/kr-diary/" style="font-size: 16.65px; color: #878787">kr-diary</a> <a href="/tags/kr-diy/" style="font-size: 14px; color: #999">kr-diy</a> <a href="/tags/kr-event/" style="font-size: 14px; color: #999">kr-event</a> <a href="/tags/kr-game/" style="font-size: 15.76px; color: #8d8d8d">kr-game</a> <a href="/tags/kr-gazua/" style="font-size: 14px; color: #999">kr-gazua</a> <a href="/tags/kr-health/" style="font-size: 14px; color: #999">kr-health</a> <a href="/tags/kr-humor/" style="font-size: 14.29px; color: #979797">kr-humor</a> <a href="/tags/kr-life/" style="font-size: 18.12px; color: #7d7d7d">kr-life</a> <a href="/tags/kr-med/" style="font-size: 14px; color: #999">kr-med</a> <a href="/tags/kr-movie/" style="font-size: 14.29px; color: #979797">kr-movie</a> <a href="/tags/kr-music/" style="font-size: 14px; color: #999">kr-music</a> <a href="/tags/kr-newbie/" style="font-size: 16.65px; color: #878787">kr-newbie</a> <a href="/tags/kr-plant/" style="font-size: 14px; color: #999">kr-plant</a> <a href="/tags/kr-ppomppu/" style="font-size: 14px; color: #999">kr-ppomppu</a> <a href="/tags/kr-review/" style="font-size: 14px; color: #999">kr-review</a> <a href="/tags/kr-story/" style="font-size: 14px; color: #999">kr-story</a> <a href="/tags/kr-title/" style="font-size: 16.06px; color: #8b8b8b">kr-title</a> <a href="/tags/kr-writing/" style="font-size: 18.71px; color: #797979">kr-writing</a> <a href="/tags/leedaeyoung/" style="font-size: 14px; color: #999">leedaeyoung</a> <a href="/tags/lifestyle/" style="font-size: 14px; color: #999">lifestyle</a> <a href="/tags/light/" style="font-size: 14px; color: #999">light</a> <a href="/tags/liv/" style="font-size: 21.94px; color: #636363">liv</a> <a href="/tags/logger/" style="font-size: 14px; color: #999">logger</a> <a href="/tags/markdown/" style="font-size: 14px; color: #999">markdown</a> <a href="/tags/mini/" style="font-size: 22.53px; color: #5f5f5f">mini</a> <a href="/tags/mining/" style="font-size: 14.29px; color: #979797">mining</a> <a href="/tags/moitto/" style="font-size: 14px; color: #999">moitto</a> <a href="/tags/muksteem/" style="font-size: 18.41px; color: #7b7b7b">muksteem</a> <a href="/tags/nodejs/" style="font-size: 14px; color: #999">nodejs</a> <a href="/tags/octopus/" style="font-size: 14px; color: #999">octopus</a> <a href="/tags/oop/" style="font-size: 14px; color: #999">oop</a> <a href="/tags/org/" style="font-size: 14px; color: #999">org</a> <a href="/tags/otac/" style="font-size: 14.29px; color: #979797">otac</a> <a href="/tags/palnet/" style="font-size: 22.82px; color: #5d5d5d">palnet</a> <a href="/tags/partiko/" style="font-size: 14.29px; color: #979797">partiko</a> <a href="/tags/photography/" style="font-size: 15.76px; color: #8d8d8d">photography</a> <a href="/tags/pizzaday/" style="font-size: 14px; color: #999">pizzaday</a> <a href="/tags/porksoup/" style="font-size: 14px; color: #999">porksoup</a> <a href="/tags/private/" style="font-size: 14px; color: #999">private</a> <a href="/tags/raspberry/" style="font-size: 14px; color: #999">raspberry</a> <a href="/tags/realclass/" style="font-size: 14px; color: #999">realclass</a> <a href="/tags/review/" style="font-size: 14px; color: #999">review</a> <a href="/tags/rors/" style="font-size: 14px; color: #999">rors</a> <a href="/tags/s/" style="font-size: 20.76px; color: #6b6b6b">s</a> <a href="/tags/sago/" style="font-size: 15.76px; color: #8d8d8d">sago</a> <a href="/tags/sb/" style="font-size: 14px; color: #999">sb</a> <a href="/tags/sbd/" style="font-size: 14px; color: #999">sbd</a> <a href="/tags/sct/" style="font-size: 24px; color: #555">sct</a> <a href="/tags/sct-altcoin/" style="font-size: 14.29px; color: #979797">sct-altcoin</a> <a href="/tags/sct-bitcoin/" style="font-size: 14px; color: #999">sct-bitcoin</a> <a href="/tags/sct-board/" style="font-size: 14px; color: #999">sct-board</a> <a href="/tags/sct-book/" style="font-size: 14px; color: #999">sct-book</a> <a href="/tags/sct-cartoon/" style="font-size: 14.29px; color: #979797">sct-cartoon</a> <a href="/tags/sct-consumer/" style="font-size: 15.18px; color: #919191">sct-consumer</a> <a href="/tags/sct-dec/" style="font-size: 14px; color: #999">sct-dec</a> <a href="/tags/sct-dev/" style="font-size: 16.94px; color: #858585">sct-dev</a> <a href="/tags/sct-diary/" style="font-size: 14.88px; color: #939393">sct-diary</a> <a href="/tags/sct-en/" style="font-size: 14px; color: #999">sct-en</a> <a href="/tags/sct-event/" style="font-size: 14px; color: #999">sct-event</a> <a href="/tags/sct-freeboard/" style="font-size: 21.35px; color: #676767">sct-freeboard</a> <a href="/tags/sct-game/" style="font-size: 18.71px; color: #797979">sct-game</a> <a href="/tags/sct-kr/" style="font-size: 23.41px; color: #595959">sct-kr</a> <a href="/tags/sct-market/" style="font-size: 15.47px; color: #8f8f8f">sct-market</a> <a href="/tags/sct-movie/" style="font-size: 14px; color: #999">sct-movie</a> <a href="/tags/sct-notice/" style="font-size: 17.24px; color: #838383">sct-notice</a> <a href="/tags/sct-otc/" style="font-size: 14px; color: #999">sct-otc</a> <a href="/tags/sct-producer/" style="font-size: 14.59px; color: #959595">sct-producer</a> <a href="/tags/sct-ror/" style="font-size: 14px; color: #999">sct-ror</a> <a href="/tags/sct-ubi/" style="font-size: 20.18px; color: #6f6f6f">sct-ubi</a> <a href="/tags/sct-userguide/" style="font-size: 14px; color: #999">sct-userguide</a> <a href="/tags/sctm/" style="font-size: 15.47px; color: #8f8f8f">sctm</a> <a href="/tags/sctr/" style="font-size: 14px; color: #999">sctr</a> <a href="/tags/seafood/" style="font-size: 14px; color: #999">seafood</a> <a href="/tags/secondtag/" style="font-size: 14.59px; color: #959595">secondtag</a> <a href="/tags/sevendaybnwchallenge/" style="font-size: 15.76px; color: #8d8d8d">sevendaybnwchallenge</a> <a href="/tags/share2steem/" style="font-size: 14px; color: #999">share2steem</a> <a href="/tags/shrimp/" style="font-size: 14px; color: #999">shrimp</a> <a href="/tags/singasong/" style="font-size: 14px; color: #999">singasong</a> <a href="/tags/singingroom/" style="font-size: 14px; color: #999">singingroom</a> <a href="/tags/smt/" style="font-size: 14px; color: #999">smt</a> <a href="/tags/solidity/" style="font-size: 14px; color: #999">solidity</a> <a href="/tags/song/" style="font-size: 14.29px; color: #979797">song</a> <a href="/tags/spt/" style="font-size: 19px; color: #777">spt</a> <a href="/tags/ssc/" style="font-size: 14.29px; color: #979797">ssc</a> <a href="/tags/standingdesk/" style="font-size: 14px; color: #999">standingdesk</a> <a href="/tags/steem/" style="font-size: 15.18px; color: #919191">steem</a> <a href="/tags/steemengine/" style="font-size: 14.29px; color: #979797">steemengine</a> <a href="/tags/steemgame/" style="font-size: 14px; color: #999">steemgame</a> <a href="/tags/steemhunt/" style="font-size: 14.29px; color: #979797">steemhunt</a> <a href="/tags/steemit/" style="font-size: 15.18px; color: #919191">steemit</a> <a href="/tags/steemitnamechallenge/" style="font-size: 14px; color: #999">steemitnamechallenge</a> <a href="/tags/steemjs/" style="font-size: 14px; color: #999">steemjs</a> <a href="/tags/steemleo/" style="font-size: 14.29px; color: #979797">steemleo</a> <a href="/tags/steemmanbae/" style="font-size: 14px; color: #999">steemmanbae</a> <a href="/tags/steemmonster/" style="font-size: 14px; color: #999">steemmonster</a> <a href="/tags/steempay/" style="font-size: 14px; color: #999">steempay</a> <a href="/tags/steemstone/" style="font-size: 14px; color: #999">steemstone</a> <a href="/tags/steemtest/" style="font-size: 14px; color: #999">steemtest</a> <a href="/tags/steemtool/" style="font-size: 14.88px; color: #939393">steemtool</a> <a href="/tags/steepshot/" style="font-size: 15.18px; color: #919191">steepshot</a> <a href="/tags/stimcity/" style="font-size: 14.29px; color: #979797">stimcity</a> <a href="/tags/stratis/" style="font-size: 14.29px; color: #979797">stratis</a> <a href="/tags/sushi/" style="font-size: 14px; color: #999">sushi</a> <a href="/tags/tasteem/" style="font-size: 17.53px; color: #818181">tasteem</a> <a href="/tags/tasteem-kr/" style="font-size: 16.94px; color: #858585">tasteem-kr</a> <a href="/tags/tellmeurwish/" style="font-size: 14px; color: #999">tellmeurwish</a> <a href="/tags/test/" style="font-size: 15.18px; color: #919191">test</a> <a href="/tags/test1/" style="font-size: 14px; color: #999">test1</a> <a href="/tags/test2/" style="font-size: 14px; color: #999">test2</a> <a href="/tags/test3/" style="font-size: 14px; color: #999">test3</a> <a href="/tags/test4/" style="font-size: 14px; color: #999">test4</a> <a href="/tags/tripsteem/" style="font-size: 14px; color: #999">tripsteem</a> <a href="/tags/tuna/" style="font-size: 14px; color: #999">tuna</a> <a href="/tags/union/" style="font-size: 21.65px; color: #656565">union</a> <a href="/tags/usereport/" style="font-size: 14px; color: #999">usereport</a> <a href="/tags/userguide/" style="font-size: 14px; color: #999">userguide</a> <a href="/tags/utopian-io/" style="font-size: 14.88px; color: #939393">utopian-io</a> <a href="/tags/vacuum/" style="font-size: 14px; color: #999">vacuum</a> <a href="/tags/wedding/" style="font-size: 14px; color: #999">wedding</a> <a href="/tags/weedcash/" style="font-size: 14.59px; color: #959595">weedcash</a> <a href="/tags/whan/" style="font-size: 19.29px; color: #757575">whan</a> <a href="/tags/wine/" style="font-size: 14px; color: #999">wine</a> <a href="/tags/winner/" style="font-size: 14px; color: #999">winner</a> <a href="/tags/winston/" style="font-size: 14px; color: #999">winston</a> <a href="/tags/worldcup/" style="font-size: 14px; color: #999">worldcup</a> <a href="/tags/xiaomi/" style="font-size: 14.29px; color: #979797">xiaomi</a> <a href="/tags/yesinfo/" style="font-size: 16.35px; color: #898989">yesinfo</a> <a href="/tags/yesjam/" style="font-size: 14.29px; color: #979797">yesjam</a> <a href="/tags/yidaeyoung/" style="font-size: 14px; color: #999">yidaeyoung</a> <a href="/tags/yougane/" style="font-size: 14px; color: #999">yougane</a> <a href="/tags/zappl/" style="font-size: 14px; color: #999">zappl</a> <a href="/tags/zzan/" style="font-size: 23.71px; color: #575757">zzan</a>
+    </div>
+  </section>
+
+
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+  
+</aside>
+
+<footer class="clearfix">
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="/atom.xml"
+            class="social fas fa-rss flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="mailto:happyaws191204@gmail.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/HappyBerrysBoy"
+            class="social fab fa-github flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <div class="aplayer-container">
+    
+
+
+  </div>
+  <br>
+  <div><p>footer.license</p>
+</div>
+  <div>
+    footer.use
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
+    作为主题
+    
+      ，
+      总访问量为
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      次
+    
+    。
+  </div>
+  
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+<script>
+  
+  var SEARCH_SERVICE = "hexo" || "hexo";
+  var ROOT = "/" || "/";
+  if (!ROOT.endsWith('/')) ROOT += '/';
+</script>
+
+<script
+  async
+  src="//instant.page/3.0.0"
+  type="module"
+  defer
+  integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"
+></script>
+ 
+<script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+<script type="text/javascript">
+  $(function() {
+    const $reveal = $(".reveal");
+    if ($reveal.length === 0) return;
+    const sr = ScrollReveal({ distance: 0 });
+    sr.reveal(".reveal");
+  });
+</script>
+ 
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+<script type="text/javascript">
+  $(function() {
+    Waves.attach(".flat-btn", ["waves-button"]);
+    Waves.attach(".float-btn", ["waves-button", "waves-float"]);
+    Waves.attach(".float-btn-light", [
+      "waves-button",
+      "waves-float",
+      "waves-light"
+    ]);
+    Waves.attach(".flat-box", ["waves-block"]);
+    Waves.attach(".float-box", ["waves-block", "waves-float"]);
+    Waves.attach(".waves-image");
+    Waves.init();
+  });
+</script>
+ 
+<script
+  async
+  src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"
+></script>
+       
+<script src="/js/backstretch.min.js"></script>
+ 
+<script type="text/javascript">
+  $(function(){
+    if ('') {
+      $('').backstretch(
+      ["https://i.loli.net/2020/02/08/HNuVoted2mUxILl.jpg", "https://i.loli.net/2020/02/08/dNJyR4LHtarTqPu.jpg", "https://i.loli.net/2020/02/08/yXx4GwgZYdi81Qs.jpg", "https://i.loli.net/2020/02/08/RP7JpGvWaCYfuB6.jpg"],
+      {
+        duration: "6000",
+        fade: "2500"
+      });
+    } else {
+      $.backstretch(
+      ["https://i.loli.net/2020/02/08/HNuVoted2mUxILl.jpg", "https://i.loli.net/2020/02/08/dNJyR4LHtarTqPu.jpg", "https://i.loli.net/2020/02/08/yXx4GwgZYdi81Qs.jpg", "https://i.loli.net/2020/02/08/RP7JpGvWaCYfuB6.jpg"],
+      {
+        duration: "6000",
+        fade: "2500"
+      });
+    }
+  });
+</script>
+        
+<script src="/js/app.js"></script>
+   
+<script src="/js/search.js"></script>
+    
+<script src="/js/commentTyping.js"></script>
+   
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "复制成功";
+  let COPY_FAILURE = "复制失败";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>复制</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+ 
+
+<ins
+  class="kakao_ad_area"
+  style="display:none;width:100%;"
+  data-ad-unit="DAN-t4ygampih3co"
+  data-ad-width="728"
+  data-ad-height="90"
+></ins>
+<script
+  type="text/javascript"
+  src="//t1.daumcdn.net/kas/static/ba.min.js"
+  async
+></script>
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
